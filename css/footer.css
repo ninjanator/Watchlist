@@ -1,0 +1,23 @@
+.footer {
+  grid-column: 2;
+  width: 120;
+  height: content;
+  padding-top: 120px;
+  margin-bottom: 120px;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid #D3D3D3; }
+  .footer a {
+    width: 120px;
+    height: auto;
+    -ms-flex-item-align: center;
+    align-self: center;
+    justify-self: center; }
+  .footer img {
+    width: 100%; }
+  .footer p {
+    color: #292929;
+    justify-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    text-align: center; }

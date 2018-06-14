@@ -1,0 +1,323 @@
+*
+  margin: 0
+  box-sizing: border-box
+
+
+$project-white: #FFF
+$project-blue: #379DFF
+$project-black: #292929
+$project-gray: #D3D3D3
+$background-color: #F6F6F6
+
+// #F6F6F6 - #190728 - #0a0211 - #d31369
+
+
+html, body
+  overflow-x: hidden
+
+.body-container
+  background-color: $background-color
+  z-index: 1
+  display: grid
+  grid-template-columns: 10% 1fr 10%
+
+.headline
+  // Grid position to parent container
+  grid-column: 2
+  padding-top: 100px
+  margin-bottom: 120px
+  span
+    border-bottom: 3px solid #379dff
+    transition: .2s cubic-bezier(.0, .0, .2, 1)
+  span:hover
+    padding-left: 5px
+    padding-right: 5px
+    transition: .2s cubic-bezier(.0, .0, .2, 1)
+
+// More like:
+.genreList
+  grid-column: 2
+  margin-top: 60px
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))
+  grid-template-rows: 60px min-content
+  grid-gap: 20px
+  img
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.30)
+    width: 100%
+    transition: .5s cubic-bezier(.0, .0, .2, 1)
+  a
+    text-decoration: none
+
+.genreCard
+  cursor: pointer
+  width: 100%
+  height: 60px
+
+  position: relative
+  display: grid
+  background-color: $project-blue
+  border-radius: 6px 6px 6px 6px
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.20)
+  transition: .2s cubic-bezier(.0, .0, .2, 1)
+  overflow: hidden
+  h5
+    color: $project-white
+    font-weight: 300
+    letter-spacing: 1px
+    align-self: center
+    justify-self: center
+    margin-bottom: 0px
+    z-index: 999
+  .backgroundColor
+    position: absolute
+    top: 0px
+    left: -100%
+    width: 100%
+    height: 100%
+    background-color: $project-blue
+    opacity: 0.2
+    border-radius: 6px 6px 6px 6px
+    transition: .2s cubic-bezier(.0, .0, .2, 1)
+
+.genreCard:hover
+  transition: .2s cubic-bezier(.0, .0, .2, 1)
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.20)
+  .backgroundColor
+    left: 0px
+    opacity: 1
+    transition: .2s cubic-bezier(.0, .0, .2, 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+.category
+  // Grid position to parent container
+  grid-column: 2
+  margin-top: 60px
+  margin-bottom: 60px
+
+
+
+
+
+
+
+.card-wrapper
+  // Grid position to parent container
+  grid-column: 2
+  display: grid
+
+  // Css grid layout
+  grid-template-rows: repeat(2, minmax(150px, min-content))
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
+  grid-column-gap: 60px
+
+
+.card
+  width: 100%
+  display: grid
+  margin-bottom: 60px
+  grid-template-columns: 1fr
+  grid-template-rows: 300px min-content
+  transition: .2s cubic-bezier(.0, .0, .2, 1)
+
+  // Upper section
+  .imageBox
+    grid-row: 1
+    background-color: #292929
+    border-radius: 6px 6px 0 0
+    overflow: hidden
+    width: 100%
+    iframe
+      opacity: 0
+      margin: 0 auto
+      transition: .5s cubic-bezier(.0, .0, .2, 1)
+      width: 100%
+      height: 100%
+    video
+      opacity: 0
+      margin: 0 auto
+      transition: .5s cubic-bezier(.0, .0, .2, 1)
+      width: 100%
+      height: 100%
+    .imdbRating
+      position: absolute
+      z-index: 999
+      height: 60px
+      width: 40px
+      background-color: $project-blue
+      margin-left: 40px
+      display: grid
+      transition: .5s cubic-bezier(.0, .0, .2, 1)
+      p
+        color: $project-white
+        font-weight: 500
+        justify-self: center
+        align-self: center
+
+  // Lower section
+  .textBox
+    grid-row: 2
+    height: auto
+    padding: 40px
+    background-color: $project-white
+    border-radius: 0 0 6px 6px
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.20)
+    transition: .2s cubic-bezier(.0, .0, .2, 1)
+    overflow: hidden
+    // CSS Grid
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    .main-text
+      grid-column: 1 / span 3
+      justify-self: start
+      margin-bottom: 30px
+    .line
+      grid-column: 1 / span 3
+      position: relative
+      height: 1px
+      width: 100%
+      background-color: $project-gray
+      margin-bottom: 20px
+    ul
+      grid-column: 1 / span 2
+      list-style-type: none
+      font-weight: 700
+      padding: 0
+      grid-row: 3
+      li
+        float: left
+        padding-right: 20px
+        .bold
+          font-weight: 700
+        .light
+          font-weight: 300
+        a
+          text-decoration: none
+          color: $project-black
+          font-weight: 300
+          transition: .2s cubic-bezier(.0, .0, .2, 1)
+        a:hover
+          color: $project-blue
+          transition: .2s cubic-bezier(.0, .0, .2, 1)
+
+    .readButton
+      grid-column: 3
+      grid-row: 3
+      align-self: end
+      justify-self: right
+      position: relative
+      transition: .2s cubic-bezier(.0, .0, .2, 1)
+      p
+        color: $project-blue
+
+    .readButton:hover
+      cursor: pointer
+
+
+
+.imdbRatingPlugin
+  position: relative
+  top: -10px
+
+// Card hover
+.card:hover
+  transform: scale(1.02)
+  border-radius: 6px
+  transition: .5s cubic-bezier(.0, .0, .2, 1)
+  -webkit-margin-top-collapse: discard
+  iframe
+    opacity: 1
+    transition: .75s cubic-bezier(.0, .0, .2, 1)
+  video
+    opacity: 1
+    transition: .75s cubic-bezier(.0, .0, .2, 1)
+  .imdbRating
+    opacity: 0
+    transition: .5s cubic-bezier(.0, .0, .2, 1)
+  .imageBox
+    // background-image: none
+    cursor: pointer
+    transition: .75s cubic-bezier(.0, .0, .2, 1)
+  .textBox
+    box-shadow: 0 2px 30px 0 rgba(0,0,0,0.20)
+    transition: .75s cubic-bezier(.0, .0, .2, 1)
+
+
+///////////////////
+// MEDIA QUERIES //
+///////////////////
+
+// smartphones, portrait iPhone, portrait 480x320 phones (Android)
+@media (min-width:320px)
+  .body-container
+    grid-template-columns: 20px 1fr 20px
+    .headline
+      margin-top: 20px
+      margin-bottom: 20px
+    .card-wrapper
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+      .textBox
+        padding: 20px
+
+
+
+
+//  smartphones, Android phones, landscape iPhone
+@media (min-width:480px)
+  .body-container
+    grid-template-columns: 20px 1fr 20px
+    .headline
+      margin-top: 40px
+      margin-bottom: 40px
+    .card-wrapper
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+      .textBox
+        padding: 40px
+//
+// //  smartphones, Android phones, landscape iPhone
+@media (min-width:600px)
+  .body-container
+    grid-template-columns: 10% 1fr 10%
+    .headline
+      margin-top: 60px
+      margin-bottom: 60px
+    .card-wrapper
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr))
+      .textBox
+        padding: 40px
+
+//tablet, landscape iPad, lo-res laptops ands desktops
+@media (min-width:801px)
+  .body-container
+    grid-template-columns: 10% 1fr 10%
+    .headline
+      margin-top: 80px
+      margin-bottom: 80px
+    .card-wrapper
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr))
+      .textBox
+        padding: 40px
+
+
+//tablet, landscape iPad, lo-res laptops ands desktops
+@media (min-width:1024px)
+    .headline
+      margin-top: 100px
+      margin-bottom: 100px
+
+//tablet, landscape iPad, lo-res laptops ands desktops
+@media (min-width:1280px)
+    .headline
+      margin-top: 120px
+      margin-bottom: 120px
